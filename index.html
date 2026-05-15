@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annadata - Empowering Indian Farmers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-light);">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+                Annadata <span style="font-weight: 400; font-size: 1rem; margin-left: 0.5rem; color: var(--text-muted);">अन्नदाता</span>
+            </div>
+            <div class="nav-links">
+                <a href="#market">Market Prices</a>
+                <a href="#advisory">Crop Advisory</a>
+                <a href="#schemes">Govt Schemes</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero container">
+        <h1>Smart Farming,<br><span class="gradient-text">Better Livelihoods</span></h1>
+        <p>Your one-stop digital platform for real-time market prices, AI-driven crop advisory, and direct access to buyers. Made for the Indian farmer.</p>
+        <div>
+            <button class="btn-primary" style="margin-right: 1rem;">Join Marketplace</button>
+            <button class="btn-secondary">Explore Schemes</button>
+        </div>
+        
+        <div class="hero-stats">
+            <div class="stat-item glass-panel">
+                <h3>2,400+</h3>
+                <p>Mandis Tracked</p>
+            </div>
+            <div class="stat-item glass-panel">
+                <h3>85%</h3>
+                <p>AI Diagnostic Accuracy</p>
+            </div>
+            <div class="stat-item glass-panel">
+                <h3>12</h3>
+                <p>Languages Supported</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard container">
+        <h2 class="section-title">Hyperlocal Intelligence</h2>
+        
+        <div class="grid-3">
+            <!-- Market Prices -->
+            <div class="glass-panel" id="market">
+                <h3 class="mb-4">Live Market Prices</h3>
+                <div id="price-list">
+                    <!-- Populated by JS -->
+                </div>
+                <button class="btn-secondary mt-4" style="width: 100%;">View All Mandis</button>
+            </div>
+
+            <!-- Weather & Advisory -->
+            <div class="glass-panel" id="advisory">
+                <h3 class="mb-4">AI Crop Advisory</h3>
+                <div class="advisory-badge alert">⚠️ Heavy Rain Alert</div>
+                <h4 style="margin-bottom: 0.5rem;">Vidarbha Region</h4>
+                <p class="mb-4" style="color: var(--text-muted); font-size: 0.9rem;">Expect 40mm rainfall in the next 48 hours. Postpone cotton sowing if planned for tomorrow.</p>
+                
+                <div style="border-top: 1px solid var(--border-color); padding-top: 1rem;" class="mt-4">
+                    <h4 class="mb-4">Recent Diagnosis</h4>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 60px; height: 60px; background: #334155; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                            📸
+                        </div>
+                        <div>
+                            <p style="font-weight: 600;">Cotton Leaf Curl Virus</p>
+                            <p style="font-size: 0.8rem; color: #34d399;">Detected 2 days ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Government Schemes -->
+            <div class="glass-panel" id="schemes">
+                <h3 class="mb-4">Recommended Schemes</h3>
+                <div style="margin-bottom: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <h4 style="color: var(--accent-gold);">PM-Kisan Samman Nidhi</h4>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">₹6,000/year minimum income support. You are eligible based on land holding.</p>
+                </div>
+                <div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <h4 style="color: var(--accent-gold);">PMFBY (Insurance)</h4>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Crop insurance for monsoon season. Application closes in 15 days.</p>
+                </div>
+                <button class="btn-primary mt-4" style="width: 100%;">Check Eligibility</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voice Assistant UI -->
+    <div class="voice-fab" id="voice-btn" title="Tap to speak">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+            <line x1="12" y1="19" x2="12" y2="22"></line>
+        </svg>
+        
+        <div class="voice-tooltip" id="voice-tooltip">
+            <p id="voice-transcript" style="font-style: italic; margin-bottom: 0.5rem; color: var(--text-muted);">"Try asking about wheat prices..."</p>
+            <p id="voice-response" style="color: var(--primary-light); font-weight: 500;"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
